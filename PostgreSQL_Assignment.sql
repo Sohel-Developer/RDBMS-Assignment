@@ -24,13 +24,23 @@ CREATE TABLE species (
 
 --Sightings table
 
-CREATE TABLE (
+CREATE TABLE sightings (
     sighting_id SERIAL PRIMARY KEY,
     species_id INT REFERENCES species(species_id),
     ranger_id INT REFERENCES rangers(ranger_id),
     location VARCHAR(100) NOT NULL,
     sighting_time TIMESTAMP NOT NULL,
     notes TEXT
-)
+);
+
+
+--Insert SOme Data
+
+-- Rangers
+
+INSERT INTO rangers (ranger_id, name, region) VALUES
+(1, 'Alice Green', 'Northern Hills'),
+(2, 'Bob White', 'River Delta'),
+(3, 'Carol King', 'Mountain Range');
 
 
